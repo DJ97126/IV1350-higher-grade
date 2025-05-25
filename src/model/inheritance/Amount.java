@@ -9,6 +9,8 @@ import java.math.RoundingMode;
 public class Amount extends BigDecimal {
 	/**
 	 * Creates a new Amount from a string.
+	 * 
+	 * @param amount The amount as a string, which will be converted to BigDecimal.
 	 */
 	public Amount(String amount) {
 		super(amount);
@@ -16,6 +18,8 @@ public class Amount extends BigDecimal {
 
 	/**
 	 * Creates a new Amount from a BigDecimal.
+	 * 
+	 * @param amount The amount as a BigDecimal.
 	 */
 	public Amount(BigDecimal amount) {
 		super(amount.toString());
@@ -25,6 +29,9 @@ public class Amount extends BigDecimal {
 	 * Adds another Amount and returns a new Amount, rounded to 2 decimals. 
 	 * This method demonstrates a potential problematic design choice of using inheritance for adaptation. 
 	 * It overrides the add method of BigDecimal, which can lead to confusion and unexpected behavior.
+	 * 
+	 * @param other The other Amount to add.
+	 * @return A new Amount representing the sum, rounded to 2 decimal places.
 	 */
 	public Amount add(Amount other) {
 		BigDecimal result = super.add(other);
@@ -32,7 +39,9 @@ public class Amount extends BigDecimal {
 	}
 
 	/**
-	 * Returns a string representation with SEK currency.
+	 * Returns a string representation in SEK.
+	 * 
+	 * @return A string representation of the amount in SEK.
 	 */
 	@Override
 	public String toString() {

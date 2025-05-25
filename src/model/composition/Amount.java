@@ -12,6 +12,8 @@ public class Amount {
 
 	/**
 	 * Creates a new Amount from a string.
+	 * 
+	 * @param amount The amount as a string, which will be converted to BigDecimal.
 	 */
 	public Amount(String amount) {
 		this.amount = new BigDecimal(amount);
@@ -19,6 +21,8 @@ public class Amount {
 
 	/**
 	 * Creates a new Amount from a BigDecimal.
+	 * 
+	 * @param amount The amount as a BigDecimal.
 	 */
 	public Amount(BigDecimal amount) {
 		this.amount = amount;
@@ -26,6 +30,9 @@ public class Amount {
 
 	/**
 	 * Adds another Amount and returns a new Amount, rounded to 2 decimals.
+	 * 
+	 * @param other The other Amount to add.
+	 * @return A new Amount representing the sum, rounded to 2 decimal places.
 	 */
 	public Amount add(Amount other) {
 		BigDecimal result = this.amount.add(other.amount);
@@ -33,7 +40,9 @@ public class Amount {
 	}
 
 	/**
-	 * Returns a string representation with SEK currency.
+	 * Returns a string representation in SEK.
+	 * 
+	 * @return A string representation of the amount in SEK.
 	 */
 	@Override
 	public String toString() {
